@@ -39,7 +39,7 @@ Rules: max 5 sentences, no buzzwords, conversational tone, one clear CTA. No sub
       { key: "resume", label: "Paste your resume", placeholder: "Paste your full resume text here...", multiline: true },
       { key: "role", label: "Role you're targeting", placeholder: "e.g. Senior Product Manager at a Series B startup" },
     ],
-    systemPrompt: (f) =>
+    systemPrompt: (f: Record<string, string>) =>
       `You are a senior hiring manager with 15 years experience. Roast this resume for someone targeting: ${f.role}.
 Resume: ${f.resume}
 Be direct and specific. Structure your response as:
