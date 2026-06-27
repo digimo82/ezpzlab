@@ -22,7 +22,7 @@ const TOOLS = [
       { key: "offer", label: "What you're offering", placeholder: "e.g. SEO audit that doubled traffic for 3 SaaS companies" },
       { key: "sender", label: "Your name / role", placeholder: "e.g. Momo, founder at EzPzLab" },
     ],
-    systemPrompt: (f) =>
+    systemPrompt: (f: Record<string, string>) =>
       `You are an expert cold email copywriter. Write a cold email from ${f.sender} to ${f.prospect} at ${f.company}. The offer is: ${f.offer}. 
 Rules: max 5 sentences, no buzzwords, conversational tone, one clear CTA. No subject line needed, just the email body. Start with their name.`,
     placeholder: "Your cold email will appear here...",
@@ -60,7 +60,7 @@ No fluff. Be the friend who tells the truth.`,
     fields: [
       { key: "contract", label: "Paste the contract text", placeholder: "Paste the clause or section you want simplified...", multiline: true },
     ],
-    systemPrompt: (f) =>
+    systemPrompt: (f: Record<string, string>) =>
       `You are a plain-language legal translator. Take this contract text and explain it in simple English:
 ${f.contract}
 Structure:
